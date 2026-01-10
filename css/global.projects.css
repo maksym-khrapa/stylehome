@@ -2,7 +2,8 @@
 .projects {
   position: relative;
   min-height: 100vh;
-  background: url("") center / cover no-repeat;
+  background: url("../img/background/about_background1.jpg") center / cover no-repeat;
+  background-attachment: fixed;
   padding: 80px 20px;
   display: flex;
   justify-content: center;
@@ -100,6 +101,7 @@
 
 /* responsive */
 @media (max-width: 768px) {
+  
   .projects__title {
     font-size: 28px;
   }
