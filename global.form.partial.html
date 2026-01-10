@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <div>
         <h3>Get Your Free Consultation Today</h3>
         <p>Fill out the form below, and one of our experts will contact you shortly to provide personalized advice and solutions for your project.</p>
@@ -67,4 +67,86 @@
             <button type="submit">Send</button>
         </form>
     </div>
+</section> -->
+
+
+
+<section class="consultation">
+  <div class="consultation__overlay">
+    <div class="consultation__form">
+      <h3>Get Your Free Consultation Today</h3>
+      <p>
+        Fill out the form below, and one of our experts will contact you shortly
+        to provide personalized advice and solutions for your project.
+      </p>
+
+      <form action="#" method="post">
+        <div class="form__grid">
+          <label>
+            First Name *
+            <input type="text" name="first_name" placeholder="Add your name" required>
+          </label>
+
+          <label>
+            Last Name *
+            <input type="text" name="last_name" placeholder="Add your last name" required>
+          </label>
+
+          <label>
+            Email *
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+
+          <label>
+            Phone Number *
+            <input type="tel" name="phone" placeholder="000 000 0000" required>
+          </label>
+
+          <label>
+            Project Type *
+            <select name="project_type" required>
+              <option value="">Select</option>
+              <option value="decor_panel">Decor panel</option>
+              <option value="kitchen">Kitchen Remodeling</option>
+              <option value="bathroom">Bathroom Remodeling</option>
+              <option value="home">Whole Home Remodeling</option>
+            </select>
+          </label>
+
+          <label>
+            Project Location *
+            <input type="text" name="location" placeholder="Your Location" required>
+          </label>
+
+          <label>
+            Estimated Budget
+            <select name="budget">
+              <option value="">Select</option>
+              <option value="low">Under $5k</option>
+              <option value="medium1">$5k – $10k</option>
+              <option value="medium2">$10k – $25k</option>
+              <option value="high">Over $25k</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred Timeline To Start
+            <select name="timeline">
+              <option value="">Select</option>
+              <option value="immediately">Within 14 days</option>
+              <option value="1_month">Within 1–2 months</option>
+              <option value="3_months">Within 3–6 months</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form__full">
+          Project Details *
+          <textarea name="project_details" rows="4" placeholder="Describe your project" required></textarea>
+        </label>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
 </section>

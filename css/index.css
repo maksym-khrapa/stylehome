@@ -1,2 +1,5 @@
 @import "global.header-nav.css";  
 @import "global.header-hero.css";  
+@import "global.form.css";
+@import "global.about.css";  
+@import "global.services.css"; 

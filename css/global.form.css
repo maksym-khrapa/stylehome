@@ -1,0 +1,146 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== SECTION BACKGROUND ===== */
+.consultation {
+  min-height: 100vh;
+  background: url("../img/background/form_background.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.consultation__overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== FORM CARD ===== */
+.consultation__form {
+  background: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 0.8s ease-out both;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HEADINGS ===== */
+.consultation__form h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.consultation__form p {
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== FORM GRID ===== */
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ===== LABELS ===== */
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== INPUTS ===== */
+input,
+select,
+textarea {
+  margin-top: 6px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* focus */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+/* ===== VALIDATION ===== */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #d40000;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: #2e8b57;
+}
+
+/* ===== TEXTAREA FULL WIDTH ===== */
+.form__full {
+  margin-top: 20px;
+}
+
+/* ===== BUTTON ===== */
+button {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #8b0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+button:hover {
+  background: #6f0000;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation__form {
+    padding: 30px 20px;
+  }
+
+  .consultation__form h3 {
+    font-size: 24px;
+  }
+}

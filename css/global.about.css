@@ -1,0 +1,109 @@
+/* ===== ABOUT SECTION ===== */
+.about {
+  position: relative;
+  min-height: 100vh;
+  background: url("../img/background/about_background1.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* overlay */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* ===== CARD ===== */
+.about__card {
+  position: relative;
+  max-width: 1000px;
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.9s ease-out both;
+}
+
+/* ===== TITLES ===== */
+.about__title {
+  font-size: 36px;
+  color: #8b0000;
+  margin-bottom: 8px;
+}
+
+.about__subtitle {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ===== TEXT ===== */
+.about__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 18px;
+  animation: textFade 0.8s ease-out both;
+}
+
+/* stagger animation */
+.about__paragraph:nth-child(1) { animation-delay: 0.1s; }
+.about__paragraph:nth-child(2) { animation-delay: 0.2s; }
+.about__paragraph:nth-child(3) { animation-delay: 0.3s; }
+.about__paragraph:nth-child(4) { animation-delay: 0.4s; }
+.about__paragraph:nth-child(5) { animation-delay: 0.5s; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textFade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HIGHLIGHT KEY WORDS ===== */
+.about__paragraph strong {
+  color: #8b0000;
+  font-weight: 600;
+  position: relative;
+}
+
+.about__paragraph strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 6px;
+  background: rgba(139, 0, 0, 0.15);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about__card {
+    padding: 30px 25px;
+  }
+
+  .about__title {
+    font-size: 28px;
+  }
+
+  .about__paragraph {
+    font-size: 15px;
+  }
+}
