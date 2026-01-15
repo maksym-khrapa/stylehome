@@ -138,15 +138,15 @@
 }
 
 /* Хрестик */
-body.menu-open .burger span:nth-child(1) {
+.burger[aria-expanded="true"] span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
 
-body.menu-open .burger span:nth-child(2) {
+.burger[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
 }
 
-body.menu-open .burger span:nth-child(3) {
+.burger[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
@@ -168,7 +168,7 @@ body.menu-open .burger span:nth-child(3) {
     z-index: 1000;
   }
 
-  body.menu-open .header__nav {
+  .header__nav.open {
     transform: translateX(0);
   }
 

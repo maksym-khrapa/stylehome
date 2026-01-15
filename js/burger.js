@@ -1,21 +1,37 @@
-  const burger = document.getElementById('burger');
-  const navLinks = document.querySelectorAll('.header__nav a');
+document.addEventListener('click', (e) => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.header__nav');
 
-  // Відкриття / закриття меню
-  burger.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
-  });
+  if (!burger || !nav) return;
 
-  // Закриття меню при кліку на посилання
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      document.body.classList.remove('menu-open');
-    });
-  });
+  // 1️⃣ Клік по бургеру
+  if (e.target.closest('.burger')) {
+    const expanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('open', !expanded);
+  }
 
-  // Закриття меню при ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.body.classList.remove('menu-open');
-    }
-  });
+  // 2️⃣ Клік по посиланню в nav → закрити
+  if (e.target.closest('.header__nav a')) {
+    burger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('open');
+  }
+
+  // 3️⃣ Клік поза nav → закрити
+  if (nav.classList.contains('open') && !e.target.closest('.header__nav') && !e.target.closest('.burger')) {
+    burger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('open');
+  }
+});
+
+// 4️⃣ Закриття по ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.header__nav');
+    if (!burger || !nav) return;
+
+    burger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('open');
+  }
+});
