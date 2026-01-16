@@ -41,7 +41,7 @@
 /* grid */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
@@ -59,27 +59,6 @@
 .project-card:hover {
   transform: scale(1.03);
   box-shadow: 0 25px 70px rgba(0,0,0,0.25);
-}
-
-/* image */
-.project-card__image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 16px;
-  margin-bottom: 15px;
-}
-
-.project-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.project-card__image img:hover {
-  transform: scale(1.05);
 }
 
 /* project name */
@@ -101,6 +80,10 @@
 /* responsive */
 @media (max-width: 768px) {
   
+    .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
   .projects__title {
     font-size: 28px;
   }
@@ -110,7 +93,7 @@
   }
 
   .project-card__image {
-    height: 180px;
+    height: 300px;
   }
 }
 
@@ -118,20 +101,24 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 250px;
-  border-radius: 8px; /* для більш елегантного вигляду */
+  height: 300px; /* висота секції */
+  border-radius: 8px;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.6s ease; /* плавний скрол */
+ 
 }
 
 .carousel-track img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;      /* картинка заповнює контейнер і обрізається лишнє */
+  object-position: center; /* центроване обрізання */
   flex-shrink: 0;
-  object-fit: cover;
+  display: block;
 }
+
 
 .carousel-btn {
   position: absolute;

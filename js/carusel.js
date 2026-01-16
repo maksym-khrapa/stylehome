@@ -1,42 +1,42 @@
-document.querySelectorAll('.project-card__carousel').forEach(carousel => {
+document.addEventListener('click', (e) => {
+  // шукаємо кнопку, по якій клікнули
+  const prevBtn = e.target.closest('.carousel-btn.prev');
+  const nextBtn = e.target.closest('.carousel-btn.next');
+
+  if (!prevBtn && !nextBtn) return; // якщо не наша кнопка — нічого не робимо
+
+  // знаходимо батьківську карусель
+  const carousel = e.target.closest('.project-card__carousel');
+  if (!carousel) return;
+
   const track = carousel.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
-  const prevBtn = carousel.querySelector('.prev');
-  const nextBtn = carousel.querySelector('.next');
-  let index = 0;
-  let interval = null;
+  const slides = Array.from(track.querySelectorAll('img'));
+  let index = parseInt(track.dataset.index || '0'); // поточний індекс з data-attribute
 
-  function updateSlide() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${slideWidth * index}px)`;
-  }
-
-  function startAutoSlide() {
-    interval = setInterval(() => {
-      index = (index + 1) % slides.length;
-      updateSlide();
-    }, 4000); // змінюємо слайд кожні 4 секунди
-  }
-
-  function stopAutoSlide() {
-    clearInterval(interval);
-  }
-
-  nextBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    index = (index + 1) % slides.length;
-    updateSlide();
-    startAutoSlide();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    stopAutoSlide();
+  // кнопка "назад"
+  if (prevBtn) {
     index = (index - 1 + slides.length) % slides.length;
-    updateSlide();
-    startAutoSlide();
-  });
+  }
 
-  window.addEventListener('resize', updateSlide);
-  
-  startAutoSlide(); // старт автоперемикання
+  // кнопка "вперед"
+  if (nextBtn) {
+    index = (index + 1) % slides.length;
+  }
+
+  // оновлюємо data-index
+  track.dataset.index = index;
+
+  // зміщуємо track
+  const slideWidth = carousel.clientWidth;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+});
+
+// підлаштування при ресайзі вікна
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.project-card__carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const index = parseInt(track.dataset.index || '0');
+    const slideWidth = carousel.clientWidth;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  });
 });
