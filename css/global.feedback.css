@@ -1,0 +1,38 @@
+.reviews-section {
+  padding: 60px 20px; /* відступи зверху/знизу та по боках */
+  background-color: #fff; /* білий фон, можна змінити */
+  display: flex;
+  justify-content: center;
+}
+
+.reviews-container {
+  max-width: 1000px; /* обмеження ширини */
+  width: 100%;
+}
+
+/* Заголовок */
+.reviews-title {
+  font-size: 36px;
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+/* Якщо треба додатковий стиль для віджету */
+.elfsight-reviews {
+  width: 100%;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .reviews-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
