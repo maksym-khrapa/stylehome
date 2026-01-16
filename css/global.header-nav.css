@@ -186,3 +186,64 @@
     display: none;
   }
 }
+
+/* ===== HEADER ANIMATIONS ===== */
+
+/* плавне появлення елементів зверху */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Логотип */
+.header__logo {
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Навігаційні пункти */
+.header__nav ul li {
+  opacity: 0;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.header__nav ul li:nth-child(1) { animation-delay: 0.4s; }
+.header__nav ul li:nth-child(2) { animation-delay: 0.5s; }
+.header__nav ul li:nth-child(3) { animation-delay: 0.6s; }
+.header__nav ul li:nth-child(4) { animation-delay: 0.7s; }
+.header__nav ul li:nth-child(5) { animation-delay: 0.8s; }
+
+/* Кнопка телефону та іконки */
+.header__phone,
+.header__icon {
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.header__phone { animation-delay: 1s; }
+.header__icon:nth-child(1) { animation-delay: 1.1s; }
+.header__icon:nth-child(2) { animation-delay: 1.2s; }
+
+/* hover ефекти */
+.header__phone:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.header__icon img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(1.2);
+}
+
+.header__nav a:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease, color 0.3s ease;
+}

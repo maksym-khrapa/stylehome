@@ -74,3 +74,61 @@
     padding: 16px 32px;
   }
 }
+
+/* ===== SERVICES1 ANIMATIONS ===== */
+
+/* плавне появлення знизу */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* анімація карток */
+.service1-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* затримка для кожної картки */
+.service1-card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.service1-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* hover ефекти */
+.service1-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  transition: transform 0.35s ease;
+}
+
+.service1-card__label {
+  transition: all 0.35s ease;
+}
+
+.service1-card:hover .service1-card__label {
+  background: #8b0000; /* темно-червоний фон */
+  color: #fff;          /* колір тексту */
+  transform: scale(1.05);
+}
+
+.service1-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* клас, який додається при видимості */
+.service1-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
