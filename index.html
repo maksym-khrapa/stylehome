@@ -14,17 +14,18 @@
     <script src="js/burger.js"></script>
     <script src="js/carusel.js"></script>
     <script src="js/accordion.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-  const video = document.querySelector('video');
-  if (video) {
-    video.play().catch(() => {
-        alert("Заблоковано");
-      console.log("Автоплей заблоковано, спробуйте користувачеві натиснути play");
-    });
-  }
-});
-    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector(".hero__video");
+
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {
+        console.log("Autoplay blocked, waiting for user interaction");
+      });
+    }
+  });
+</script>
 
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 </head>
